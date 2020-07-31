@@ -1,13 +1,11 @@
 <header id="layout-header">
   <nav>
-      <div class="mini-logo">
+      <div class="logo">
           <p>
-              <a href="/">
                   CSV-Upload
-              </a>
           </p>
       </div>
-      <form action="/file/upload" enctype="multipart/form-data" method="post">
+      <form id="form-style" action="/file/upload" enctype="multipart/form-data" method="post">
         <input type="file" name="filename" accept=".csv ">
         <input type="submit" value="Upload">
       </form>
