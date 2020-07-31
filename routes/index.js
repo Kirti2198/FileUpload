@@ -3,9 +3,8 @@ const router=express.Router();
 
 const homeController= require('../controllers/home_controller');
 router.get('/',homeController.home );
-router.post('/', homeController.upload);
 
-router.get('/file',homeController.getAllFiles);
-router.get('/file/:id/view', homeController.openFile);
+router.use('/file', require('./csvfileupload'));
+
 
 module.exports= router;
