@@ -1,10 +1,13 @@
 const express=require('express');
-const app=express();
+const db = require('./config/mongoose');
 const port=8000;
+// for setting the path of views we need to require path
+const path= require('path');
+const app=express();
 
 const upload= require("express-fileupload");
 app.use(upload());
-const db=require('./config/mongoose');
+
 
 //middleware to parse form data
 app.use(express.urlencoded({ extended: true }));

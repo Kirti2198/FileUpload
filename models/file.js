@@ -3,17 +3,19 @@ const path=require('path');
 
 const fileSchema= new mongoose.Schema({
   path:{
-    type:String
+    type:String,
+    required:true
   },
   filename:{
-    type: String
+    type: String,
+    required:true
+
   },
-  originalname:{
-    type: String
-  }
 },{
   timestamps: true
 });
+
+
 
 const File= mongoose.model('File', fileSchema);
 module.exports= File;

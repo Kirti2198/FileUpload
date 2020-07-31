@@ -1,5 +1,6 @@
 <h1>All Files</h1>
 
 <% for(file of files){%>
-    <%= file.filename %>
+
+  <a href="/file/<%= file.id %>/view">  <%= file.filename %> </a><br>
   <%}%>

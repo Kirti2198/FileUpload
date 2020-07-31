@@ -6,5 +6,6 @@ router.get('/',homeController.home );
 router.post('/', homeController.upload);
 
 router.get('/file',homeController.getAllFiles);
+router.get('/file/:id/view', homeController.openFile);
 
 module.exports= router;
