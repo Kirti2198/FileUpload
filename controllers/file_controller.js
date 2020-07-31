@@ -22,14 +22,14 @@ module.exports.upload= async function(req,res){
                   filename:filename,
             });
           }
-          //TODO ::this is not sending msg to home while rendering
+         
            return res.render('home',{
              title:"Home Page",
              message: "file uploaded successfully"
            });
   }catch(err){
             return res.render('home',{
-              //this is sill not working 
+              
               message:"file upload failed!!"
             })
   } 
@@ -44,6 +44,8 @@ module.exports.upload= async function(req,res){
   
       
         return  res.render('file',{
+               title: 'All Files',
+               path: 'file',
                files :files
   });
     }catch(err){
@@ -63,7 +65,7 @@ module.exports.upload= async function(req,res){
         const jsonArray = await csv().fromFile(csvFilePath);
   
         return res.render('display', {
-            path: 'Display Files',
+          path: 'Display Files',
             title: 'display',
             name: file.name,
             jsonArray

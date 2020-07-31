@@ -1,6 +1,21 @@
-<h1>All Files</h1>
+<!-- <h1>All Files</h1>
 
 <% for(file of files){%>
 
   <a href="/file/<%= file.id %>/view">  <%= file.filename %> </a><br>
-  <%}%>
+  <%}%> -->
+
+
+  <h1> All Files</h1>
+<div id="files-container">
+    <% if(files) { %>
+    <div id="files">
+        <% for(file of files){%>
+        <p>
+            <a class="file-name" href="/file/<%= file.id %>/view"><%= file.filename %></a>
+        </p>
+        <% } %>
+        
+    </div>
+    <% } %>
+</div>

@@ -1,5 +1,6 @@
 const express=require('express');
 const db = require('./config/mongoose');
+const expressLayout = require("express-ejs-layouts");
 const port=8000;
 // for setting the path of views we need to require path
 const path= require('path');
@@ -13,6 +14,9 @@ app.use(upload());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// middleware to access static files
+app.use(express.static('./assets'));
+
 app.use('/uploads', express.static(__dirname + "/uploads"));
 
 //set view engine to ejs
@@ -20,7 +24,8 @@ app.set('view engine', 'ejs');
 app.set('views', './views');
 
 
-
+//use express layouts
+app.use(expressLayout);
 
 app.use("/", require('./routes'));
 
